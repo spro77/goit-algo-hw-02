@@ -1,5 +1,6 @@
 import queue
 import uuid
+import time
 
 app_queue = queue.Queue()
 
@@ -21,7 +22,6 @@ def process_requests():
         request = app_queue.get()
         print(f"Processing: {request}")
 
-        import time
         time.sleep(1)
         print(f"Processed: {request['id']}")
         app_queue.task_done()
